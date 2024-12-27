@@ -1,17 +1,24 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class SumTwoNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int num1 = 0, num2 = 0;
+
+        while (true) {
+            try {
+                System.out.print("Введите первое число: ");
+                num1 = Integer.parseInt(scanner.nextLine());
+                System.out.print("Введите второе число: ");
+                num2 = Integer.parseInt(scanner.nextLine());
+                break; // Завершить цикл, если ввод корректен
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка ввода! Введите целые числа.");
+            }
         }
+
+        System.out.println("Сумма: " + (num1 + num2));
     }
 }
